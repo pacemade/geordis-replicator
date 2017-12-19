@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -65,7 +67,7 @@ class Replicator
     # And then to see what's inside the glass, use:
     #   glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
-
+binding.pry
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
     #   glass_inside_replicator.inside.contents

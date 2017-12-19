@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -8,7 +10,7 @@ class Replicator
 
     # Setup the inside of the replicator. This is where the drink is made.
     @inside_replicator = Location.new
-
+# binding.pry
     # Setup the outside of the replicator. This is where the
     # final drink should end up for the character to consume.
     @plate = Location.new
@@ -50,10 +52,10 @@ class Replicator
     # transported and @inside_replicator will contain the glass
     # in its contents.
     retrieve_glass
-
+binding.pry
     # Setup an instance variable to access the glass.
     @glass = @inside_replicator.contents.first
-
+# binding.pry
     # Transport each ingredient the recipe calls for
     # from the pantry to the glass.
     # If this method is successful, it should return
@@ -85,7 +87,7 @@ class Replicator
     # the proper temperature and with the proper ingredients.
     transport_glass_to_replicator_plate
   end
-
+# binding.pry
   # This moves the glass from the cupboard to inside the replicator.
   def retrieve_glass
     @enterprise.transporter.energize(

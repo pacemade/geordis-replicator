@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -39,6 +41,8 @@ class Replicator
   # Put a `binding.pry` at the beginning of this method
   # and then manually execute each method to ensure
   # it returns what's expect.
+
+
   def replicate(recipe)
 
     # Setup an instance variable for the recipe
@@ -54,6 +58,7 @@ class Replicator
     # Setup an instance variable to access the glass.
     @glass = @inside_replicator.contents.first
 
+
     # Transport each ingredient the recipe calls for
     # from the pantry to the glass.
     # If this method is successful, it should return
@@ -65,7 +70,7 @@ class Replicator
     # And then to see what's inside the glass, use:
     #   glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
-
+# binding.pry
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
     #   glass_inside_replicator.inside.contents
@@ -112,9 +117,7 @@ class Replicator
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(
-        # Geordi is in a jokey mood and
-        # reprograms the replicator
-        @enterprise.pantry.find_ingredient('banana'),
+        @enterprise.pantry.find_ingredient(ingredient_name),
         @enterprise.pantry.shelf,
         glass_inside_replicator.inside
       )

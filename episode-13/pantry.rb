@@ -2,7 +2,7 @@
 # When this is instatiated, it should put stock
 # its shelf with the necessary ingredients
 # to make the recipe if it's working properly.
-
+require 'pry'
 class Pantry
 
   def initialize

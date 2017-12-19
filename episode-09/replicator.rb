@@ -1,3 +1,6 @@
+require 'pry'
+
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -44,7 +47,7 @@ class Replicator
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
-
+# binding.pry
     # This transports a glass from the cupboard to inside the replicator.
     # If this method is successful, it will return the glass that was
     # transported and @inside_replicator will contain the glass
@@ -77,6 +80,7 @@ class Replicator
     # If you read back `glass.temperature`, then it should be set
     # to the temperature the recipe calls for if this method executed properly.
     adjust_temperature
+    transport_glass_from_reactor
 
     # This method moves the glass from @inside_replicator to @plate
     # so that the character can pick it up and drink it.
@@ -84,6 +88,7 @@ class Replicator
     # and now @plate.contents should contain the glass at
     # the proper temperature and with the proper ingredients.
     transport_glass_to_replicator_plate
+
   end
 
   # This moves the glass from the cupboard to inside the replicator.

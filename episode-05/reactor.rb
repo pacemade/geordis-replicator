@@ -63,7 +63,7 @@ class Reactor
   end
 
   def datas_cat_eats_dilithium_crystals
-    @dilithium_crystals -= 50
+    # @dilithium_crystals -= 50
   end
 
   def heat_items_in_core

@@ -200,7 +200,7 @@ class Replicator
   end
 
   def mouse_chews_through_power_cord
-    @power = false
+    # @power = false
   end
 
 end

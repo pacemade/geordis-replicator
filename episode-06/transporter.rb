@@ -16,7 +16,7 @@ class Transporter
   end
 
   def obriens_repairs_transporter
-    @power = false
+    # @power = false
   end
 
   def energize(obj, from, to)

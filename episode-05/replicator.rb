@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   # When the Enterprise calls Replicator.new, this method executes.
@@ -40,7 +42,7 @@ class Replicator
   # and then manually execute each method to ensure
   # it returns what's expect.
   def replicate(recipe)
-
+# binding.pry
     # Setup an instance variable for the recipe
     # so that other methods can see what the recipe is
     @recipe = recipe
@@ -50,7 +52,7 @@ class Replicator
     # transported and @inside_replicator will contain the glass
     # in its contents.
     retrieve_glass
-
+# binding.pry
     # Setup an instance variable to access the glass.
     @glass = @inside_replicator.contents.first
 
@@ -65,27 +67,28 @@ class Replicator
     # And then to see what's inside the glass, use:
     #   glass_inside_replicator.inside.contents
     transport_ingredients_to_glass
-
+# binding.pry
     # This methods mixes the ingredients in the glass around.
     # It returns nil, even if successful, but if you look at:
     #   glass_inside_replicator.inside.contents
     # then you may find the ingredients order has changed.
     # If it's successful, all the ingredients should still be in the glass.
     mix
-
+# binding.pry
     # This method adjusts the temperature of the contents in the glass.
     # If you read back `glass.temperature`, then it should be set
     # to the temperature the recipe calls for if this method executed properly.
     adjust_temperature
-
+# binding.pry
     # This method moves the glass from @inside_replicator to @plate
     # so that the character can pick it up and drink it.
     # If it's successful, glass_inside_replicator should be nil
     # and now @plate.contents should contain the glass at
     # the proper temperature and with the proper ingredients.
     transport_glass_to_replicator_plate
+    binding.pry
   end
-
+# binding.pry
   # This moves the glass from the cupboard to inside the replicator.
   def retrieve_glass
     @enterprise.transporter.energize(
@@ -93,6 +96,7 @@ class Replicator
       @enterprise.cupboard.shelf,
       @inside_replicator
     )
+
   end
 
   def glass_inside_replicator
@@ -101,13 +105,12 @@ class Replicator
     # and obtains the first element of that array.
     @inside_replicator.contents.first
   end
-
+# binding.pry
   # This transports ingredients into the glass.
   def transport_ingredients_to_glass
 
     # Abort if there is no glass inside the replicator.
     return unless glass_inside_replicator
-
     # Go through recipe and transport each ingredient
     # from pantry to glass, one by one.
     @recipe.ingredients.each do |ingredient_name|

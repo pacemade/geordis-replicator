@@ -1,3 +1,5 @@
+require 'pry'
+
 # A location instance is used by anything that can hold
 # anything else. Each location has `contents`, which is
 # an array to hold other instances.
